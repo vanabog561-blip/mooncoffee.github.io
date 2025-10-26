@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Зёрна - MOON COFFEE</title>
+  <link rel="stylesheet" href="coffee.css">
+</head>
+<body>
+  <header>
+    <div class="container header-flex">
+      <div class="logo">
+        <h1>MOON COFFEE</h1>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="coffee.html">Главная</a></li>
+          <li><a href="#">О компании</a></li>
+          <li><a href="#contact">Контакты</a></li>
+          <li><a href="#" onclick="openCart()">Корзина (<span id="cart-count">0</span>)</a></li>
+          <li><a href="#" onclick="openOrderHistory()">История заказов</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Кофейные зёрна</h2>
+      <p>40 сортов отборных кофейных зёрен</p>
+      <div class="catalog-container">
+        <button class="catalog-toggle" onclick="toggleCatalogMenu()">Каталог</button>
+        <div class="catalog-menu" id="catalogMenu">
+          <button onclick="location.href='kofe.html'">Кофе</button>
+          <button onclick="location.href='kokteli.html'">Коктейли</button>
+          <button onclick="location.href='zerna.html'">Зёрна</button>
+          <button onclick="location.href='napitki.html'">Напитки</button>
+          <button onclick="location.href='des.html'">Десерты</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products">
+    <div class="container">
+      <h3>Кофейные зёрна (40 позиций)</h3>
+      <div class="product-grid" id="productGrid">
+        <!-- Зерна 1-10 -->
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Эфиопия Сидамо" class="product-img">
+          <h4>Эфиопия Сидамо (250г)</h4>
+          <p>4500 ₸</p>
+          <button onclick="addToCart('Эфиопия Сидамо (250г)', 4500)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Колумбия Супремо" class="product-img">
+          <h4>Колумбия Супремо (250г)</h4>
+          <p>3800 ₸</p>
+          <button onclick="addToCart('Колумбия Супремо (250г)', 3800)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Бразилия Сантос" class="product-img">
+          <h4>Бразилия Сантос (250г)</h4>
+          <p>3400 ₸</p>
+          <button onclick="addToCart('Бразилия Сантос (250г)', 3400)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Гватемала Антигуа" class="product-img">
+          <h4>Гватемала Антигуа (250г)</h4>
+          <p>4600 ₸</p>
+          <button onclick="addToCart('Гватемала Антигуа (250г)', 4600)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Кения AA" class="product-img">
+          <h4>Кения AA (250г)</h4>
+          <p>4800 ₸</p>
+          <button onclick="addToCart('Кения AA (250г)', 4800)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Коста-Рика Тарразу" class="product-img">
+          <h4>Коста-Рика Тарразу (250г)</h4>
+          <p>4100 ₸</p>
+          <button onclick="addToCart('Коста-Рика Тарразу (250г)', 4100)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Ямайка Блю Маунтин" class="product-img">
+          <h4>Ямайка Блю Маунтин (250г)</h4>
+          <p>6000 ₸</p>
+          <button onclick="addToCart('Ямайка Блю Маунтин (250г)', 6000)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Суматра Манделинг" class="product-img">
+          <h4>Суматра Манделинг (250г)</h4>
+          <p>3900 ₸</p>
+          <button onclick="addToCart('Суматра Манделинг (250г)', 3900)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Эфиопия Йиргачеффе" class="product-img">
+          <h4>Эфиопия Йиргачеффе (250г)</h4>
+          <p>4600 ₸</p>
+          <button onclick="addToCart('Эфиопия Йиргачеффе (250г)', 4600)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Папуа-Новая Гвинея" class="product-img">
+          <h4>Папуа-Новая Гвинея (250г)</h4>
+          <p>4300 ₸</p>
+          <button onclick="addToCart('Папуа-Новая Гвинея (250г)', 4300)">Купить</button>
+        </div>
+
+        <!-- Зерна 11-20 -->
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Танзания Килиманджаро" class="product-img">
+          <h4>Танзания Килиманджаро (250г)</h4>
+          <p>4400 ₸</p>
+          <button onclick="addToCart('Танзания Килиманджаро (250г)', 4400)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Перу Чанчамайо" class="product-img">
+          <h4>Перу Чанчамайо (250г)</h4>
+          <p>3600 ₸</p>
+          <button onclick="addToCart('Перу Чанчамайо (250г)', 3600)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Никарагуа Марагоджип" class="product-img">
+          <h4>Никарагуа Марагоджип (250г)</h4>
+          <p>4700 ₸</p>
+          <button onclick="addToCart('Никарагуа Марагоджип (250г)', 4700)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Вьетнам Далат" class="product-img">
+          <h4>Вьетнам Далат (250г)</h4>
+          <p>3500 ₸</p>
+          <button onclick="addToCart('Вьетнам Далат (250г)', 3500)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Индия Майсор" class="product-img">
+          <h4>Индия Майсор (250г)</h4>
+          <p>3600 ₸</p>
+          <button onclick="addToCart('Индия Майсор (250г)', 3600)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Мексика Чьяпас" class="product-img">
+          <h4>Мексика Чьяпас (250г)</h4>
+          <p>3400 ₸</p>
+          <button onclick="addToCart('Мексика Чьяпас (250г)', 3400)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Гондурас Маракайя" class="product-img">
+          <h4>Гондурас Маракайя (250г)</h4>
+          <p>4000 ₸</p>
+          <button onclick="addToCart('Гондурас Маракайя (250г)', 4000)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Сальвадор Пакмара" class="product-img">
+          <h4>Сальвадор Пакмара (250г)</h4>
+          <p>4300 ₸</p>
+          <button onclick="addToCart('Сальвадор Пакмара (250г)', 4300)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Боливия Каранави" class="product-img">
+          <h4>Боливия Каранави (250г)</h4>
+          <p>4600 ₸</p>
+          <button onclick="addToCart('Боливия Каранави (250г)', 4600)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Руанда Бурбон" class="product-img">
+          <h4>Руанда Бурбон (250г)</h4>
+          <p>4100 ₸</p>
+          <button onclick="addToCart('Руанда Бурбон (250г)', 4100)">Купить</button>
+        </div>
+
+        <!-- Зерна 21-30 -->
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Уганда Бугису" class="product-img">
+          <h4>Уганда Бугису (250г)</h4>
+          <p>3700 ₸</p>
+          <button onclick="addToCart('Уганда Бугису (250г)', 3700)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Замбия Касама" class="product-img">
+          <h4>Замбия Касама (250г)</h4>
+          <p>4200 ₸</p>
+          <button onclick="addToCart('Замбия Касама (250г)', 4200)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Мадагаскар" class="product-img">
+          <h4>Мадагаскар (250г)</h4>
+          <p>4800 ₸</p>
+          <button onclick="addToCart('Мадагаскар (250г)', 4800)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Гавайи Кона" class="product-img">
+          <h4>Гавайи Кона (250г)</h4>
+          <p>5500 ₸</p>
+          <button onclick="addToCart('Гавайи Кона (250г)', 5500)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Доминикана Барахона" class="product-img">
+          <h4>Доминикана Барахона (250г)</h4>
+          <p>3900 ₸</p>
+          <button onclick="addToCart('Доминикана Барахона (250г)', 3900)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Куба Сьерра-Маэстра" class="product-img">
+          <h4>Куба Сьерра-Маэстра (250г)</h4>
+          <p>4300 ₸</p>
+          <button onclick="addToCart('Куба Сьерра-Маэстра (250г)', 4300)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Пуэрто-Рико Яуко" class="product-img">
+          <h4>Пуэрто-Рико Яуко (250г)</h4>
+          <p>4600 ₸</p>
+          <button onclick="addToCart('Пуэрто-Рико Яуко (250г)', 4600)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Тринидад и Тобаго" class="product-img">
+          <h4>Тринидад и Тобаго (250г)</h4>
+          <p>4500 ₸</p>
+          <button onclick="addToCart('Тринидад и Тобаго (250г)', 4500)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Ява" class="product-img">
+          <h4>Ява (250г)</h4>
+          <p>3800 ₸</p>
+          <button onclick="addToCart('Ява (250г)', 3800)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Сулавеси Торайя" class="product-img">
+          <h4>Сулавеси Торайя (250г)</h4>
+          <p>4400 ₸</p>
+          <button onclick="addToCart('Сулавеси Торайя (250г)', 4400)">Купить</button>
+        </div>
+
+        <!-- Зерна 31-40 -->
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Флорес Баджава" class="product-img">
+          <h4>Флорес Баджава (250г)</h4>
+          <p>4200 ₸</p>
+          <button onclick="addToCart('Флорес Баджава (250г)', 4200)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Тимор-Лесте" class="product-img">
+          <h4>Тимор-Лесте (250г)</h4>
+          <p>4000 ₸</p>
+          <button onclick="addToCart('Тимор-Лесте (250г)', 4000)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Бали Кинтамани" class="product-img">
+          <h4>Бали Кинтамани (250г)</h4>
+          <p>4600 ₸</p>
+          <button onclick="addToCart('Бали Кинтамани (250г)', 4600)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Лаос Болейенс" class="product-img">
+          <h4>Лаос Болейенс (250г)</h4>
+          <p>3700 ₸</p>
+          <button onclick="addToCart('Лаос Болейенс (250г)', 3700)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Мьянма Шан" class="product-img">
+          <h4>Мьянма Шан (250г)</h4>
+          <p>4400 ₸</p>
+          <button onclick="addToCart('Мьянма Шан (250г)', 4400)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Таиланд Дой Тунг" class="product-img">
+          <h4>Таиланд Дой Тунг (250г)</h4>
+          <p>4100 ₸</p>
+          <button onclick="addToCart('Таиланд Дой Тунг (250г)', 4100)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Филиппины Бенгет" class="product-img">
+          <h4>Филиппины Бенгет (250г)</h4>
+          <p>3900 ₸</p>
+          <button onclick="addToCart('Филиппины Бенгет (250г)', 3900)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Шри-Ланка Нувара-Элия" class="product-img">
+          <h4>Шри-Ланка Нувара-Элия (250г)</h4>
+          <p>4300 ₸</p>
+          <button onclick="addToCart('Шри-Ланка Нувара-Элия (250г)', 4300)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Йемен Мокка" class="product-img">
+          <h4>Йемен Мокка (250г)</h4>
+          <p>4900 ₸</p>
+          <button onclick="addToCart('Йемен Мокка (250г)', 4900)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&h=300&fit=crop" alt="Оман Джебель-Ахдар" class="product-img">
+          <h4>Оман Джебель-Ахдар (250г)</h4>
+          <p>4700 ₸</p>
+          <button onclick="addToCart('Оман Джебель-Ахдар (250г)', 4700)">Купить</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Модальное окно корзины -->
+  <div id="cartModal" class="cart-modal">
+    <div class="cart-content">
+      <span class="close-cart" onclick="closeCart()">&times;</span>
+      <h2>Корзина</h2>
+      <div class="cart-items" id="cartItems">
+      </div>
+      <div class="cart-total">
+        Итого: <span id="cartTotal">0</span> ₸
+      </div>
+      
+      <div id="paymentForm" class="payment-form" style="display: none;">
+        <h3>Оплата картой</h3>
+        <div class="form-group">
+          <label for="cardNumber">Номер карты:</label>
+          <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19">
+        </div>
+        <div class="form-group">
+          <label for="cardName">Имя владельца:</label>
+          <input type="text" id="cardName" placeholder="IVAN IVANOV">
+        </div>
+        <div class="card-inputs">
+          <div class="form-group">
+            <label for="cardExpiry">Срок действия:</label>
+            <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5">
+          </div>
+          <div class="form-group">
+            <label for="cardCVC">CVC:</label>
+            <input type="text" id="cardCVC" placeholder="123" maxlength="3">
+          </div>
+        </div>
+        <button class="btn" onclick="processPayment()">Оплатить</button>
+      </div>
+      
+      <button class="btn" id="checkoutBtn" onclick="showPaymentForm()">Оформить заказ</button>
+    </div>
+  </div>
+
+  <!-- Модальное окно истории заказов -->
+  <div id="orderHistoryModal" class="cart-modal">
+    <div class="cart-content">
+      <span class="close-cart" onclick="closeOrderHistory()">&times;</span>
+      <h2>История заказов</h2>
+      <div class="order-history" id="orderHistory">
+      </div>
+    </div>
+  </div>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Контакты</h2>
+      <p>Адрес: г.Алмата улица:Баймагамбетова 55б</p>
+      <p>Телефон: +7 (706) 625-01-24 </p>
+      <p>Email: vanabog561@gmail.com</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Кофейня "MOON COFFEE". Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script>
+    let cart = [];
+    let orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+    
+    function toggleCatalogMenu() {
+      const menu = document.getElementById('catalogMenu');
+      menu.classList.toggle('active');
+    }
+    
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      updateCart();
+      alert(`Товар "${name}" добавлен в корзину!`);
+    }
+    
+    function updateCart() {
+      const cartCount = document.getElementById('cart-count');
+      const cartItems = document.getElementById('cartItems');
+      const cartTotal = document.getElementById('cartTotal');
+      
+      cartCount.textContent = cart.length;
+      
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<div class="empty-cart">Корзина пуста</div>';
+        cartTotal.textContent = '0';
+        document.getElementById('checkoutBtn').style.display = 'block';
+        document.getElementById('paymentForm').style.display = 'none';
+        return;
+      }
+      
+      let itemsHTML = '';
+      let total = 0;
+      
+      cart.forEach((item, index) => {
+        itemsHTML += `
+          <div class="cart-item">
+            <span>${item.name}</span>
+            <span>${item.price} ₸</span>
+            <button onclick="removeFromCart(${index})">Удалить</button>
+          </div>
+        `;
+        total += item.price;
+      });
+      
+      cartItems.innerHTML = itemsHTML;
+      cartTotal.textContent = total;
+    }
+    
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCart();
+    }
+    
+    function openCart() {
+      document.getElementById('cartModal').style.display = 'block';
+    }
+    
+    function closeCart() {
+      document.getElementById('cartModal').style.display = 'none';
+      document.getElementById('paymentForm').style.display = 'none';
+      document.getElementById('checkoutBtn').style.display = 'block';
+    }
+    
+    function showPaymentForm() {
+      if (cart.length === 0) {
+        alert('Корзина пуста!');
+        return;
+      }
+      document.getElementById('paymentForm').style.display = 'block';
+      document.getElementById('checkoutBtn').style.display = 'none';
+    }
+    
+    function processPayment() {
+      const cardNumber = document.getElementById('cardNumber').value;
+      const cardName = document.getElementById('cardName').value;
+      const cardExpiry = document.getElementById('cardExpiry').value;
+      const cardCVC = document.getElementById('cardCVC').value;
+      
+      if (!cardNumber || !cardName || !cardExpiry || !cardCVC) {
+        alert('Пожалуйста, заполните все поля карты!');
+        return;
+      }
+      
+      if (cardNumber.replace(/\s/g, '').length !== 16) {
+        alert('Номер карты должен содержать 16 цифр!');
+        return;
+      }
+      
+      if (cardCVC.length !== 3) {
+        alert('CVC код должен содержать 3 цифры!');
+        return;
+      }
+      
+      const order = {
+        id: Date.now(),
+        date: new Date().toLocaleString('ru-RU'),
+        items: [...cart],
+        total: cart.reduce((sum, item) => sum + item.price, 0),
+        status: 'Оплачен'
+      };
+      
+      orderHistory.unshift(order);
+      localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+      
+      alert(`Оплата прошла успешно! Спасибо за заказ №${order.id}`);
+      
+      cart = [];
+      updateCart();
+      closeCart();
+      
+      document.getElementById('cardNumber').value = '';
+      document.getElementById('cardName').value = '';
+      document.getElementById('cardExpiry').value = '';
+      document.getElementById('cardCVC').value = '';
+    }
+    
+    function openOrderHistory() {
+      updateOrderHistory();
+      document.getElementById('orderHistoryModal').style.display = 'block';
+    }
+    
+    function closeOrderHistory() {
+      document.getElementById('orderHistoryModal').style.display = 'none';
+    }
+    
+    function updateOrderHistory() {
+      const orderHistoryElement = document.getElementById('orderHistory');
+      
+      if (orderHistory.length === 0) {
+        orderHistoryElement.innerHTML = '<div class="empty-cart">История заказов пуста</div>';
+        return;
+      }
+      
+      let ordersHTML = '';
+      
+      orderHistory.forEach(order => {
+        const products = order.items.map(item => item.name).join(', ');
+        ordersHTML += `
+          <div class="order-item">
+            <div class="order-header">
+              <span class="order-date">Заказ №${order.id} от ${order.date}</span>
+              <span class="order-total">${order.total} ₸</span>
+            </div>
+            <div class="order-products">${products}</div>
+            <div class="order-status">Статус: ${order.status}</div>
+          </div>
+        `;
+      });
+      
+      orderHistoryElement.innerHTML = ordersHTML;
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const cardNumber = document.getElementById('cardNumber');
+      const cardExpiry = document.getElementById('cardExpiry');
+      const cardCVC = document.getElementById('cardCVC');
+      
+      if (cardNumber) {
+        cardNumber.addEventListener('input', function(e) {
+          let value = e.target.value.replace(/\D/g, '');
+          value = value.replace(/(.{4})/g, '$1 ').trim();
+          e.target.value = value.substring(0, 19);
+        });
+      }
+      
+      if (cardExpiry) {
+        cardExpiry.addEventListener('input', function(e) {
+          let value = e.target.value.replace(/\D/g, '');
+          if (value.length >= 2) {
+            value = value.substring(0, 2) + '/' + value.substring(2);
+          }
+          e.target.value = value.substring(0, 5);
+        });
+      }
+      
+      if (cardCVC) {
+        cardCVC.addEventListener('input', function(e) {
+          e.target.value = e.target.value.replace(/\D/g, '').substring(0, 3);
+        });
+      }
+    });
+    
+    window.onclick = function(event) {
+      const cartModal = document.getElementById('cartModal');
+      const orderHistoryModal = document.getElementById('orderHistoryModal');
+      const catalogMenu = document.getElementById('catalogMenu');
+      
+      if (event.target === cartModal) {
+        closeCart();
+      }
+      
+      if (event.target === orderHistoryModal) {
+        closeOrderHistory();
+      }
+      
+      if (event.target !== document.querySelector('.catalog-toggle') && 
+          catalogMenu && !catalogMenu.contains(event.target)) {
+        catalogMenu.classList.remove('active');
+      }
+    }
+    
+    updateCart();
+    updateOrderHistory();
+  </script>
+</body>
+</html>

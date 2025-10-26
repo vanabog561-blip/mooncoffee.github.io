@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Коктейли - MOON COFFEE</title>
+  <link rel="stylesheet" href="coffee.css">
+</head>
+<body>
+  <header>
+    <div class="container header-flex">
+      <div class="logo">
+        <h1>MOON COFFEE</h1>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="coffee.html">Главная</a></li>
+          <li><a href="#">О компании</a></li>
+          <li><a href="#">Контакты</a></li>
+          <li><a href="#" onclick="openCart()">Корзина (<span id="cart-count">0</span>)</a></li>
+          <li><a href="#" onclick="openOrderHistory()">История заказов</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Коктейльная карта</h2>
+      <p>40 освежающих коктейлей</p>
+      <div class="catalog-container">
+        <button class="catalog-toggle" onclick="toggleCatalogMenu()">Каталог</button>
+        <div class="catalog-menu" id="catalogMenu">
+          <button onclick="location.href='kofe.html'">Кофе</button>
+          <button onclick="location.href='kokteli.html'">Коктейли</button>
+          <button onclick="location.href='zerna.html'">Зёрна</button>
+          <button onclick="location.href='napitki.html'">Напитки</button>
+          <button onclick="location.href='des.html'">Десерты</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products">
+    <div class="container">
+      <h3>Коктейли (40 позиций)</h3>
+      <div class="product-grid" id="productGrid">
+        <!-- Коктейли 1-10 -->
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Мохито Классический" class="product-img">
+          <h4>Мохито Классический</h4>
+          <p>1800 ₸</p>
+          <button onclick="addToCart('Мохито Классический', 1800)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Мохито Клубничный" class="product-img">
+          <h4>Мохито Клубничный</h4>
+          <p>1900 ₸</p>
+          <button onclick="addToCart('Мохито Клубничный', 1900)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1576186726580-a816e8b12896?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Мохито Малиновый" class="product-img">
+          <h4>Мохито Малиновый</h4>
+          <p>1900 ₸</p>
+          <button onclick="addToCart('Мохито Малиновый', 1900)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Мохито Манговый" class="product-img">
+          <h4>Мохито Манговый</h4>
+          <p>2000 ₸</p>
+          <button onclick="addToCart('Мохито Манговый', 2000)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Мохито Персиковый" class="product-img">
+          <h4>Мохито Персиковый</h4>
+          <p>2000 ₸</p>
+          <button onclick="addToCart('Мохито Персиковый', 2000)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1609951651556-5334e2706168?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Мохито Ананасовый" class="product-img">
+          <h4>Мохито Ананасовый</h4>
+          <p>2100 ₸</p>
+          <button onclick="addToCart('Мохито Ананасовый', 2100)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1628991838225-8e5c6d35eb4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Мохито Кокосовый" class="product-img">
+          <h4>Мохито Кокосовый</h4>
+          <p>2200 ₸</p>
+          <button onclick="addToCart('Мохито Кокосовый', 2200)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1560512823-829485b8bf24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Мохито Арбузный" class="product-img">
+          <h4>Мохито Арбузный</h4>
+          <p>1900 ₸</p>
+          <button onclick="addToCart('Мохито Арбузный', 1900)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1609951651556-5334e2706168?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Мохито Дынный" class="product-img">
+          <h4>Мохито Дынный</h4>
+          <p>2000 ₸</p>
+          <button onclick="addToCart('Мохито Дынный', 2000)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Мохито Киви" class="product-img">
+          <h4>Мохито Киви</h4>
+          <p>2000 ₸</p>
+          <button onclick="addToCart('Мохито Киви', 2000)">Купить</button>
+        </div>
+
+        <!-- Коктейли 11-20 -->
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Клубничный Дайкири" class="product-img">
+          <h4>Клубничный Дайкири</h4>
+          <p>2200 ₸</p>
+          <button onclick="addToCart('Клубничный Дайкири', 2200)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1576186726580-a816e8b12896?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Малиновый Дайкири" class="product-img">
+          <h4>Малиновый Дайкири</h4>
+          <p>2200 ₸</p>
+          <button onclick="addToCart('Малиновый Дайкири', 2200)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Манговый Дайкири" class="product-img">
+          <h4>Манговый Дайкири</h4>
+          <p>2300 ₸</p>
+          <button onclick="addToCart('Манговый Дайкири', 2300)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Персиковый Дайкири" class="product-img">
+          <h4>Персиковый Дайкири</h4>
+          <p>2300 ₸</p>
+          <button onclick="addToCart('Персиковый Дайкири', 2300)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1609951651556-5334e2706168?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Ананасовый Дайкири" class="product-img">
+          <h4>Ананасовый Дайкири</h4>
+          <p>2400 ₸</p>
+          <button onclick="addToCart('Ананасовый Дайкири', 2400)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1628991838225-8e5c6d35eb4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Кокосовый Дайкири" class="product-img">
+          <h4>Кокосовый Дайкири</h4>
+          <p>2500 ₸</p>
+          <button onclick="addToCart('Кокосовый Дайкири', 2500)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1576186726580-a816e8b12896?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Вишневый Дайкири" class="product-img">
+          <h4>Вишневый Дайкири</h4>
+          <p>2200 ₸</p>
+          <button onclick="addToCart('Вишневый Дайкири', 2200)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Голубичный Дайкири" class="product-img">
+          <h4>Голубичный Дайкири</h4>
+          <p>2200 ₸</p>
+          <button onclick="addToCart('Голубичный Дайкири', 2200)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1576186726580-a816e8b12896?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Ежевичный Дайкири" class="product-img">
+          <h4>Ежевичный Дайкири</h4>
+          <p>2200 ₸</p>
+          <button onclick="addToCart('Ежевичный Дайкири', 2200)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Черничный Дайкири" class="product-img">
+          <h4>Черничный Дайкири</h4>
+          <p>2200 ₸</p>
+          <button onclick="addToCart('Черничный Дайкири', 2200)">Купить</button>
+        </div>
+
+        <!-- Коктейли 21-30 -->
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1628991838225-8e5c6d35eb4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Пина Колада" class="product-img">
+          <h4>Пина Колада</h4>
+          <p>2600 ₸</p>
+          <button onclick="addToCart('Пина Колада', 2600)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Клубничная Пина Колада" class="product-img">
+          <h4>Клубничная Пина Колада</h4>
+          <p>2700 ₸</p>
+          <button onclick="addToCart('Клубничная Пина Колада', 2700)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1576186726580-a816e8b12896?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Малиновая Пина Колада" class="product-img">
+          <h4>Малиновая Пина Колада</h4>
+          <p>2700 ₸</p>
+          <button onclick="addToCart('Малиновая Пина Колада', 2700)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Манго Пина Колада" class="product-img">
+          <h4>Манго Пина Колада</h4>
+          <p>2800 ₸</p>
+          <button onclick="addToCart('Манго Пина Колада', 2800)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Персиковая Пина Колада" class="product-img">
+          <h4>Персиковая Пина Колада</h4>
+          <p>2800 ₸</p>
+          <button onclick="addToCart('Персиковая Пина Колада', 2800)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Киви Пина Колада" class="product-img">
+          <h4>Киви Пина Колада</h4>
+          <p>2700 ₸</p>
+          <button onclick="addToCart('Киви Пина Колада', 2700)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1609951651556-5334e2706168?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Банановая Пина Колада" class="product-img">
+          <h4>Банановая Пина Колада</h4>
+          <p>2600 ₸</p>
+          <button onclick="addToCart('Банановая Пина Колада', 2600)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1576186726580-a816e8b12896?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Маракуйя Пина Колада" class="product-img">
+          <h4>Маракуйя Пина Колада</h4>
+          <p>2900 ₸</p>
+          <button onclick="addToCart('Маракуйя Пина Колада', 2900)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Пассифлора Пина Колада" class="product-img">
+          <h4>Пассифлора Пина Колада</h4>
+          <p>2900 ₸</p>
+          <button onclick="addToCart('Пассифлора Пина Колада', 2900)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Гуава Пина Колада" class="product-img">
+          <h4>Гуава Пина Колада</h4>
+          <p>3000 ₸</p>
+          <button onclick="addToCart('Гуава Пина Колада', 3000)">Купить</button>
+        </div>
+
+        <!-- Коктейли 31-40 -->
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Маргарита Классическая" class="product-img">
+          <h4>Маргарита Классическая</h4>
+          <p>2200 ₸</p>
+          <button onclick="addToCart('Маргарита Классическая', 2200)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Клубничная Маргарита" class="product-img">
+          <h4>Клубничная Маргарита</h4>
+          <p>2400 ₸</p>
+          <button onclick="addToCart('Клубничная Маргарита', 2400)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1576186726580-a816e8b12896?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Малиновая Маргарита" class="product-img">
+          <h4>Малиновая Маргарита</h4>
+          <p>2400 ₸</p>
+          <button onclick="addToCart('Малиновая Маргарита', 2400)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Манго Маргарита" class="product-img">
+          <h4>Манго Маргарита</h4>
+          <p>2500 ₸</p>
+          <button onclick="addToCart('Манго Маргарита', 2500)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Персиковая Маргарита" class="product-img">
+          <h4>Персиковая Маргарита</h4>
+          <p>2500 ₸</p>
+          <button onclick="addToCart('Персиковая Маргарита', 2500)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1609951651556-5334e2706168?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Ананасовая Маргарита" class="product-img">
+          <h4>Ананасовая Маргарита</h4>
+          <p>2600 ₸</p>
+          <button onclick="addToCart('Ананасовая Маргарита', 2600)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1628991838225-8e5c6d35eb4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Кокосовая Маргарита" class="product-img">
+          <h4>Кокосовая Маргарита</h4>
+          <p>2700 ₸</p>
+          <button onclick="addToCart('Кокосовая Маргарита', 2700)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1576186726580-a816e8b12896?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Вишневая Маргарита" class="product-img">
+          <h4>Вишневая Маргарита</h4>
+          <p>2400 ₸</p>
+          <button onclick="addToCart('Вишневая Маргарита', 2400)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Голубичная Маргарита" class="product-img">
+          <h4>Голубичная Маргарита</h4>
+          <p>2400 ₸</p>
+          <button onclick="addToCart('Голубичная Маргарита', 2400)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1576186726580-a816e8b12896?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Ежевичная Маргарита" class="product-img">
+          <h4>Ежевичная Маргарита</h4>
+          <p>2400 ₸</p>
+          <button onclick="addToCart('Ежевичная Маргарита', 2400)">Купить</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Модальное окно корзины -->
+  <div id="cartModal" class="cart-modal">
+    <div class="cart-content">
+      <span class="close-cart" onclick="closeCart()">&times;</span>
+      <h2>Корзина</h2>
+      <div class="cart-items" id="cartItems">
+      </div>
+      <div class="cart-total">
+        Итого: <span id="cartTotal">0</span> ₸
+      </div>
+      
+      <div id="paymentForm" class="payment-form" style="display: none;">
+        <h3>Оплата картой</h3>
+        <div class="form-group">
+          <label for="cardNumber">Номер карты:</label>
+          <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19">
+        </div>
+        <div class="form-group">
+          <label for="cardName">Имя владельца:</label>
+          <input type="text" id="cardName" placeholder="IVAN IVANOV">
+        </div>
+        <div class="card-inputs">
+          <div class="form-group">
+            <label for="cardExpiry">Срок действия:</label>
+            <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5">
+          </div>
+          <div class="form-group">
+            <label for="cardCVC">CVC:</label>
+            <input type="text" id="cardCVC" placeholder="123" maxlength="3">
+          </div>
+        </div>
+        <button class="btn" onclick="processPayment()">Оплатить</button>
+      </div>
+      
+      <button class="btn" id="checkoutBtn" onclick="showPaymentForm()">Оформить заказ</button>
+    </div>
+  </div>
+
+  <!-- Модальное окно истории заказов -->
+  <div id="orderHistoryModal" class="cart-modal">
+    <div class="cart-content">
+      <span class="close-cart" onclick="closeOrderHistory()">&times;</span>
+      <h2>История заказов</h2>
+      <div class="order-history" id="orderHistory">
+      </div>
+    </div>
+  </div>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Контакты</h2>
+      <p>Адрес: г.Алмата улица:Баймагамбетова 55б</p>
+      <p>Телефон: +7 (706) 625-01-24 </p>
+      <p>Email: vanabog561@gmail.com</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Кофейня "MOON COFFEE". Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script>
+    let cart = [];
+    let orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+    
+    function toggleCatalogMenu() {
+      const menu = document.getElementById('catalogMenu');
+      menu.classList.toggle('active');
+    }
+    
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      updateCart();
+      alert(`Товар "${name}" добавлен в корзину!`);
+    }
+    
+    function updateCart() {
+      const cartCount = document.getElementById('cart-count');
+      const cartItems = document.getElementById('cartItems');
+      const cartTotal = document.getElementById('cartTotal');
+      
+      cartCount.textContent = cart.length;
+      
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<div class="empty-cart">Корзина пуста</div>';
+        cartTotal.textContent = '0';
+        document.getElementById('checkoutBtn').style.display = 'block';
+        document.getElementById('paymentForm').style.display = 'none';
+        return;
+      }
+      
+      let itemsHTML = '';
+      let total = 0;
+      
+      cart.forEach((item, index) => {
+        itemsHTML += `
+          <div class="cart-item">
+            <span>${item.name}</span>
+            <span>${item.price} ₸</span>
+            <button onclick="removeFromCart(${index})">Удалить</button>
+          </div>
+        `;
+        total += item.price;
+      });
+      
+      cartItems.innerHTML = itemsHTML;
+      cartTotal.textContent = total;
+    }
+    
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCart();
+    }
+    
+    function openCart() {
+      document.getElementById('cartModal').style.display = 'block';
+    }
+    
+    function closeCart() {
+      document.getElementById('cartModal').style.display = 'none';
+      document.getElementById('paymentForm').style.display = 'none';
+      document.getElementById('checkoutBtn').style.display = 'block';
+    }
+    
+    function showPaymentForm() {
+      if (cart.length === 0) {
+        alert('Корзина пуста!');
+        return;
+      }
+      document.getElementById('paymentForm').style.display = 'block';
+      document.getElementById('checkoutBtn').style.display = 'none';
+    }
+    
+    function processPayment() {
+      const cardNumber = document.getElementById('cardNumber').value;
+      const cardName = document.getElementById('cardName').value;
+      const cardExpiry = document.getElementById('cardExpiry').value;
+      const cardCVC = document.getElementById('cardCVC').value;
+      
+      if (!cardNumber || !cardName || !cardExpiry || !cardCVC) {
+        alert('Пожалуйста, заполните все поля карты!');
+        return;
+      }
+      
+      if (cardNumber.replace(/\s/g, '').length !== 16) {
+        alert('Номер карты должен содержать 16 цифр!');
+        return;
+      }
+      
+      if (cardCVC.length !== 3) {
+        alert('CVC код должен содержать 3 цифры!');
+        return;
+      }
+      
+      const order = {
+        id: Date.now(),
+        date: new Date().toLocaleString('ru-RU'),
+        items: [...cart],
+        total: cart.reduce((sum, item) => sum + item.price, 0),
+        status: 'Оплачен'
+      };
+      
+      orderHistory.unshift(order);
+      localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+      
+      alert(`Оплата прошла успешно! Спасибо за заказ №${order.id}`);
+      
+      cart = [];
+      updateCart();
+      closeCart();
+      
+      document.getElementById('cardNumber').value = '';
+      document.getElementById('cardName').value = '';
+      document.getElementById('cardExpiry').value = '';
+      document.getElementById('cardCVC').value = '';
+    }
+    
+    function openOrderHistory() {
+      updateOrderHistory();
+      document.getElementById('orderHistoryModal').style.display = 'block';
+    }
+    
+    function closeOrderHistory() {
+      document.getElementById('orderHistoryModal').style.display = 'none';
+    }
+    
+    function updateOrderHistory() {
+      const orderHistoryElement = document.getElementById('orderHistory');
+      
+      if (orderHistory.length === 0) {
+        orderHistoryElement.innerHTML = '<div class="empty-cart">История заказов пуста</div>';
+        return;
+      }
+      
+      let ordersHTML = '';
+      
+      orderHistory.forEach(order => {
+        const products = order.items.map(item => item.name).join(', ');
+        ordersHTML += `
+          <div class="order-item">
+            <div class="order-header">
+              <span class="order-date">Заказ №${order.id} от ${order.date}</span>
+              <span class="order-total">${order.total} ₸</span>
+            </div>
+            <div class="order-products">${products}</div>
+            <div class="order-status">Статус: ${order.status}</div>
+          </div>
+        `;
+      });
+      
+      orderHistoryElement.innerHTML = ordersHTML;
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const cardNumber = document.getElementById('cardNumber');
+      const cardExpiry = document.getElementById('cardExpiry');
+      const cardCVC = document.getElementById('cardCVC');
+      
+      if (cardNumber) {
+        cardNumber.addEventListener('input', function(e) {
+          let value = e.target.value.replace(/\D/g, '');
+          value = value.replace(/(.{4})/g, '$1 ').trim();
+          e.target.value = value.substring(0, 19);
+        });
+      }
+      
+      if (cardExpiry) {
+        cardExpiry.addEventListener('input', function(e) {
+          let value = e.target.value.replace(/\D/g, '');
+          if (value.length >= 2) {
+            value = value.substring(0, 2) + '/' + value.substring(2);
+          }
+          e.target.value = value.substring(0, 5);
+        });
+      }
+      
+      if (cardCVC) {
+        cardCVC.addEventListener('input', function(e) {
+          e.target.value = e.target.value.replace(/\D/g, '').substring(0, 3);
+        });
+      }
+    });
+    
+    window.onclick = function(event) {
+      const cartModal = document.getElementById('cartModal');
+      const orderHistoryModal = document.getElementById('orderHistoryModal');
+      const catalogMenu = document.getElementById('catalogMenu');
+      
+      if (event.target === cartModal) {
+        closeCart();
+      }
+      
+      if (event.target === orderHistoryModal) {
+        closeOrderHistory();
+      }
+      
+      if (event.target !== document.querySelector('.catalog-toggle') && 
+          catalogMenu && !catalogMenu.contains(event.target)) {
+        catalogMenu.classList.remove('active');
+      }
+    }
+    
+    updateCart();
+    updateOrderHistory();
+  </script>
+</body>
+</html>

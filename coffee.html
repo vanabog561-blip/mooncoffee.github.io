@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кофейня "MOON COFFEE"</title>
+  <link rel="stylesheet" href="coffee.css">
+</head>
+<body>
+  <header>
+    <div class="container header-flex">
+      <div class="logo">
+        <h1>MOON COFFEE</h1>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#">О компании</a></li>
+          <li><a href="#">Контакты</a></li>
+          <li><a href="#" onclick="openCart()">Корзина (<span id="cart-count">0</span>)</a></li>
+          <li><a href="#" onclick="openOrderHistory()">История заказов</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Добро пожаловать в мир вкуса и аромата</h2>
+      <p>Самый вкусный кофе в городе</p>
+      <div class="catalog-container">
+        <button class="catalog-toggle" onclick="toggleCatalogMenu()">Каталог</button>
+        <div class="catalog-menu" id="catalogMenu">
+          <button onclick="location.href='kofe.html'">Кофе</button>
+          <button onclick="location.href='kokteli.html'">Коктейли</button>
+          <button onclick="location.href='zerna.html'">Зёрна</button>
+          <button onclick="location.href='napitki.html'">Напитки</button>
+          <button onclick="location.href='des.html'">Десерты</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products">
+    <div class="container">
+      <h3>Популярные товары</h3>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="https://pizzayoli.ru/image/cache/catalog/product/7b3d948519ac478e23130472963b3d54-1000x0.PNG" alt="Американо">
+          <h4>Американо</h4>
+          <p>1000 ₸</p>
+          <button onclick="addToCart('Американо', 1000)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400&h=300&fit=crop" alt="Пуэр">
+          <h4>Пуэр</h4>
+          <p>1200 ₸</p>
+          <button onclick="addToCart('Пуэр', 1200)">Купить</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1554520735-0a6b8b6ce8b7?w=400&h=300&fit=crop" alt="Блинчики">
+          <h4>Блинчики</h4>
+          <p>1000 ₸</p>
+          <button onclick="addToCart('Блинчики', 1000)">Купить</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Контакты</h2>
+      <p>Адрес: г.Алмата улица:Баймагамбетова 55б</p>
+      <p>Телефон: +7 (706) 625-01-24 </p>
+      <p>Email: vanabog561@gmail.com</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Кофейня "MOON COFFEE". Все права защищены.</p>
+    </div>
+  </footer>
+
+  <div id="cartModal" class="cart-modal">
+    <div class="cart-content">
+      <span class="close-cart" onclick="closeCart()">&times;</span>
+      <h2>Корзина</h2>
+      <div class="cart-items" id="cartItems">
+      </div>
+      <div class="cart-total">
+        Итого: <span id="cartTotal">0</span> ₸
+      </div>
+      
+      <div id="paymentForm" class="payment-form" style="display: none;">
+        <h3>Оплата картой</h3>
+        <div class="form-group">
+          <label for="cardNumber">Номер карты:</label>
+          <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19">
+        </div>
+        <div class="form-group">
+          <label for="cardName">Имя владельца:</label>
+          <input type="text" id="cardName" placeholder="IVAN IVANOV">
+        </div>
+        <div class="card-inputs">
+          <div class="form-group">
+            <label for="cardExpiry">Срок действия:</label>
+            <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5">
+          </div>
+          <div class="form-group">
+            <label for="cardCVC">CVC:</label>
+            <input type="text" id="cardCVC" placeholder="123" maxlength="3">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="deliveryAddress">Адрес доставки:</label>
+          <textarea id="deliveryAddress" placeholder="Укажите полный адрес доставки" rows="3"></textarea>
+        </div>
+        <button class="btn" onclick="processPayment()">Оплатить</button>
+      </div>
+      
+      <button class="btn" id="checkoutBtn" onclick="showPaymentForm()">Оформить заказ</button>
+    </div>
+  </div>
+
+  <div id="orderHistoryModal" class="cart-modal">
+    <div class="cart-content">
+      <span class="close-cart" onclick="closeOrderHistory()">&times;</span>
+      <h2>История заказов</h2>
+      <div class="order-history" id="orderHistory">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let cart = [];
+    let orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+    
+    function toggleCatalogMenu() {
+      const menu = document.getElementById('catalogMenu');
+      menu.classList.toggle('active');
+    }
+    
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      updateCart();
+      alert(`Товар "${name}" добавлен в корзину!`);
+    }
+    
+    function updateCart() {
+      const cartCount = document.getElementById('cart-count');
+      const cartItems = document.getElementById('cartItems');
+      const cartTotal = document.getElementById('cartTotal');
+      
+      cartCount.textContent = cart.length;
+      
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<div class="empty-cart">Корзина пуста</div>';
+        cartTotal.textContent = '0';
+        document.getElementById('checkoutBtn').style.display = 'block';
+        document.getElementById('paymentForm').style.display = 'none';
+        return;
+      }
+      
+      let itemsHTML = '';
+      let total = 0;
+      
+      cart.forEach((item, index) => {
+        itemsHTML += `
+          <div class="cart-item">
+            <span>${item.name}</span>
+            <span>${item.price} ₸</span>
+            <button onclick="removeFromCart(${index})">Удалить</button>
+          </div>
+        `;
+        total += item.price;
+      });
+      
+      cartItems.innerHTML = itemsHTML;
+      cartTotal.textContent = total;
+    }
+    
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCart();
+    }
+    
+    function openCart() {
+      document.getElementById('cartModal').style.display = 'block';
+    }
+    
+    function closeCart() {
+      document.getElementById('cartModal').style.display = 'none';
+      document.getElementById('paymentForm').style.display = 'none';
+      document.getElementById('checkoutBtn').style.display = 'block';
+    }
+    
+    function showPaymentForm() {
+      if (cart.length === 0) {
+        alert('Корзина пуста!');
+        return;
+      }
+      document.getElementById('paymentForm').style.display = 'block';
+      document.getElementById('checkoutBtn').style.display = 'none';
+    }
+    
+    function processPayment() {
+      const cardNumber = document.getElementById('cardNumber').value;
+      const cardName = document.getElementById('cardName').value;
+      const cardExpiry = document.getElementById('cardExpiry').value;
+      const cardCVC = document.getElementById('cardCVC').value;
+      const deliveryAddress = document.getElementById('deliveryAddress').value;
+      
+      if (!cardNumber || !cardName || !cardExpiry || !cardCVC || !deliveryAddress) {
+        alert('Пожалуйста, заполните все поля карты и адрес доставки!');
+        return;
+      }
+      
+      if (cardNumber.replace(/\s/g, '').length !== 16) {
+        alert('Номер карты должен содержать 16 цифр!');
+        return;
+      }
+      
+      if (cardCVC.length !== 3) {
+        alert('CVC код должен содержать 3 цифры!');
+        return;
+      }
+      
+      const order = {
+        id: Date.now(),
+        date: new Date().toLocaleString('ru-RU'),
+        items: [...cart],
+        total: cart.reduce((sum, item) => sum + item.price, 0),
+        status: 'Оплачен',
+        address: deliveryAddress
+      };
+      
+      orderHistory.unshift(order);
+      localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+      
+      alert(`Оплата прошла успешно! Спасибо за заказ №${order.id}. Ваш заказ будет доставлен по адресу: ${deliveryAddress}`);
+      
+      cart = [];
+      updateCart();
+      closeCart();
+      
+      document.getElementById('cardNumber').value = '';
+      document.getElementById('cardName').value = '';
+      document.getElementById('cardExpiry').value = '';
+      document.getElementById('cardCVC').value = '';
+      document.getElementById('deliveryAddress').value = '';
+    }
+    
+    function openOrderHistory() {
+      updateOrderHistory();
+      document.getElementById('orderHistoryModal').style.display = 'block';
+    }
+    
+    function closeOrderHistory() {
+      document.getElementById('orderHistoryModal').style.display = 'none';
+    }
+    
+    function updateOrderHistory() {
+      const orderHistoryElement = document.getElementById('orderHistory');
+      
+      if (orderHistory.length === 0) {
+        orderHistoryElement.innerHTML = '<div class="empty-cart">История заказов пуста</div>';
+        return;
+      }
+      
+      let ordersHTML = '';
+      
+      orderHistory.forEach(order => {
+        const products = order.items.map(item => item.name).join(', ');
+        ordersHTML += `
+          <div class="order-item">
+            <div class="order-header">
+              <span class="order-date">Заказ №${order.id} от ${order.date}</span>
+              <span class="order-total">${order.total} ₸</span>
+            </div>
+            <div class="order-products">${products}</div>
+            <div class="order-address">Адрес доставки: ${order.address}</div>
+            <div class="order-status">Статус: ${order.status}</div>
+          </div>
+        `;
+      });
+      
+      orderHistoryElement.innerHTML = ordersHTML;
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const cardNumber = document.getElementById('cardNumber');
+      const cardExpiry = document.getElementById('cardExpiry');
+      const cardCVC = document.getElementById('cardCVC');
+      
+      if (cardNumber) {
+        cardNumber.addEventListener('input', function(e) {
+          let value = e.target.value.replace(/\D/g, '');
+          value = value.replace(/(.{4})/g, '$1 ').trim();
+          e.target.value = value.substring(0, 19);
+        });
+      }
+      
+      if (cardExpiry) {
+        cardExpiry.addEventListener('input', function(e) {
+          let value = e.target.value.replace(/\D/g, '');
+          if (value.length >= 2) {
+            value = value.substring(0, 2) + '/' + value.substring(2);
+          }
+          e.target.value = value.substring(0, 5);
+        });
+      }
+      
+      if (cardCVC) {
+        cardCVC.addEventListener('input', function(e) {
+          e.target.value = e.target.value.replace(/\D/g, '').substring(0, 3);
+        });
+      }
+    });
+    
+    window.onclick = function(event) {
+      const cartModal = document.getElementById('cartModal');
+      const orderHistoryModal = document.getElementById('orderHistoryModal');
+      const catalogMenu = document.getElementById('catalogMenu');
+      
+      if (event.target === cartModal) {
+        closeCart();
+      }
+      
+      if (event.target === orderHistoryModal) {
+        closeOrderHistory();
+      }
+      
+      if (event.target !== document.querySelector('.catalog-toggle') && 
+          catalogMenu && !catalogMenu.contains(event.target)) {
+        catalogMenu.classList.remove('active');
+      }
+    }
+    
+    updateCart();
+    updateOrderHistory();
+  </script>
+</body>
+</html>
